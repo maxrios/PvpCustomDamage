@@ -1,7 +1,7 @@
 package me.megabot.pvpcustomdmg.config;
 
 public class DamageConfig {
-    private static int dmgPercentageMulti = -100;
+    private static int dmgPercentageMulti = 0;
     private static double baseDmg = 1.0;
     private static boolean isBaseEnabled = false;
 
