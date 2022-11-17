@@ -36,6 +36,10 @@ public class DamageConfigExecutor implements CommandExecutor {
                 if (args.length == 2) setBaseHandler(sender, args[1]);
                 else setBaseHandler(sender, "");
                 break;
+            case TOGGLE_DEMO:
+                if (args.length == 1) toggleDemoHandler(sender);
+                else sender.sendMessage(ChatColor.DARK_RED + "Uh oh! That's an invalid command.");
+                break;
             default:
                 sender.sendMessage(ChatColor.DARK_RED + "Uh oh! That's an invalid command.");
         }
@@ -86,10 +90,21 @@ public class DamageConfigExecutor implements CommandExecutor {
         sender.sendMessage(ChatColor.DARK_GREEN + "Base damage set to " + damage + ".");
     }
 
+    private void toggleDemoHandler(CommandSender sender) {
+        DamageConfig.setIsDemoEnabled(!DamageConfig.isDemoEnabled());
+        if (DamageConfig.isDemoEnabled())
+            sender.sendMessage(ChatColor.DARK_GREEN +
+                    "Demo mode is enabled. All entities take custom player damage.");
+        else
+            sender.sendMessage(ChatColor.DARK_GREEN +
+                    "Demo mode is disabled.");
+    }
+
     private enum CommandArg {
         MULTIPLY,
         TOGGLE_BASE,
-        SET_BASE;
+        SET_BASE,
+        TOGGLE_DEMO;
 
         public static CommandArg getArgument(String arg) {
             arg = arg.toLowerCase();
@@ -97,6 +112,7 @@ public class DamageConfigExecutor implements CommandExecutor {
                 case "multiply" -> MULTIPLY;
                 case "toggle-base" -> TOGGLE_BASE;
                 case "set-base" -> SET_BASE;
+                case "toggle-demo" -> TOGGLE_DEMO;
                 default -> null;
             };
         }
