@@ -1,0 +1,11 @@
+name: PvpCustomDmg
+version: '${version}'
+main: me.megabot.pvpcustomdmg.PvpCustomDmg
+api-version: 1.19
+authors: [ megabot ]
+description: A minecraft spigot plugin that allows modification of player-to-player damage
+website: https://github.com/maxrios
+
+commands:
+  dmg-control:
+    description: Modify pvp damage
