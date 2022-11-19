@@ -1,9 +1,7 @@
 # PVP Custom Damage
 A Minecraft spigot plugin that modifies pvp damage.
 
-Either multiply weapon damage or set base damage for all weapons. Only supported projectiles are arrows.
-
-Support for all projectiles coming soon ;)
+Either multiply weapon damage or set base damage for all weapons.
 
 ## Commands
 - Player must be OP

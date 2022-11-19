@@ -7,12 +7,12 @@ public class DamageConfig {
     private static boolean isDemoEnabled = false;
 
     public static double modifyDamageValue(double damage) {
-        if (isBaseEnabled) return baseDmg;
+        if (isBaseEnabled) return (damage == 0) ? damage : baseDmg;
         return damage + (damage * dmgPercentageMulti);
     }
 
-    public static void setDmgPercentageMulti(int mult) {
-        dmgPercentageMulti = mult;
+    public static void setDmgPercentageMulti(int multi) {
+        dmgPercentageMulti = multi;
     }
 
     public static int getDmgPercentageMulti() {
