@@ -8,7 +8,7 @@ public class DamageConfig {
 
     public static double modifyDamageValue(double damage) {
         if (isBaseEnabled) return (damage == 0) ? damage : baseDmg;
-        return damage + (damage * dmgPercentageMulti);
+        return damage + (damage * (dmgPercentageMulti / 100));
     }
 
     public static void setDmgPercentageMulti(int multi) {
